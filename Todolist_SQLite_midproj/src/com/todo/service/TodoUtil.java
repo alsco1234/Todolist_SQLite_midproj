@@ -124,10 +124,12 @@ public class TodoUtil {
 	}
 	
 	public static void ComplistAll(TodoList l) {
-		System.out.printf("[전체 목록, 총 %d개]\n", l.getCount());
+		int count = 0;
 		for (TodoItem item : l.getCompList()) {
 			System.out.println(item.toString());
+			count++;
 		}
+		System.out.printf("\t[총 %d개]\n", count);
 	}
 	
 	public static void listCateAll(TodoList l) {
@@ -164,10 +166,13 @@ public class TodoUtil {
 	}
 
 	public static void WeeklistAll(TodoList l) {
+		int count = 0;
 		System.out.printf("[이번주 할일 목록]\n");
 		for (TodoItem item : l.getWeekList()) {
 			System.out.println(item.toString());
+			count++;
 		}
+		System.out.println("[이번주 할일 총 "+count+"개");
 	}
 
 	public static void compdelItem(TodoList l) {
